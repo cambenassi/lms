@@ -3,6 +3,7 @@ import React from 'react'
 import GroupCard from './groupCard'
 
 import cam from './../images/cam.jpeg'
+import caleb from './../images/Caleb.jfif'
 
 export default function aboutUs() {
   return (
@@ -16,7 +17,8 @@ export default function aboutUs() {
                 <GroupCard name={"Alvin Tran"}/>
             </div>
             <div class="">
-                <GroupCard name={"3"}/>
+                <GroupCard name={"Caleb Bergen"} link={"https://www.linkedin.com/in/caleb-bergen-62b395236/"} role="Full Stack Engineer"
+                img={caleb}/>
                 <GroupCard name={"4"}/>
             </div>
             <div class="">
