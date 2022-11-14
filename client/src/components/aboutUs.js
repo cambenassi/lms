@@ -3,6 +3,7 @@ import React from 'react'
 import GroupCard from './groupCard'
 
 import cam from './../images/cam.jpeg'
+import caleb from './../images/Caleb.jfif'
 
 export default function aboutUs() {
   return (
@@ -10,6 +11,20 @@ export default function aboutUs() {
         <div id="nav" class="w-full text-gray-600 flex justify-center pt-5 pb-4 text-5xl border-b-2 border-black drop-shadow-sm">
             About The Team
         </div>
+        <div id="cardsGrid" class="grid grid-cols-3 place-items-center pt-5">
+            <div class="">
+                <GroupCard name={"Cam Benassi"} link={"https://www.linkedin.com/in/cambenassi/"} role="Full Stack Engineer" img={cam}/>
+                <GroupCard name={"Alvin Tran"}/>
+            </div>
+            <div class="">
+                <GroupCard name={"Caleb Bergen"} link={"https://www.linkedin.com/in/caleb-bergen-62b395236/"} role="Full Stack Engineer"
+                img={caleb}/>
+                <GroupCard name={"4"}/>
+            </div>
+            <div class="">
+                <GroupCard name={"5"}/>
+                <GroupCard name={"6"}/>
+            </div>
         <div id="cardsGrid" class="w-full grid grid-cols-4 place-items-center pt-5">
                 <div><GroupCard name={"Cam Benassi"} link={"https://www.linkedin.com/in/cambenassi/"} role="Full Stack Engineer" img={cam}/></div>
                 <div class="col-span-1"><GroupCard name={"5"}/></div>
