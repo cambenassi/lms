@@ -1,0 +1,42 @@
+.container { background-color: #000000;}
+.container #uml { opacity: 0.4; }
+p {opacity: 1 !important;}
+
+#row1desktop{
+    opacity: 0;
+    animation: .5s ease-out 0s 1 slideUp forwards;
+}
+
+#row2desktop{
+    opacity: 0;
+    animation: .5s ease-out .75s 1 slideUp forwards;
+}
+
+#row1mobile{
+    opacity: 0;
+    animation: .5s ease-out 0s 1 slideUp forwards;
+}
+
+#row2mobile{
+    opacity: 0;
+    animation: .5s ease-out .75s 1 slideUp forwards;
+}
+
+#row3mobile{
+    opacity: 0;
+    animation: .5s ease-out 1.25s 1 slideUp forwards;
+}
+
+
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
