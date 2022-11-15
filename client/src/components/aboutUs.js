@@ -7,6 +7,7 @@ import cam from './../images/cam.jpeg'
 import caleb from './../images/Caleb.jfif'
 import alvin from './../images/alvin.jpeg'
 import leonard from './../images/leonard.jpeg'
+import tony from './../images/tony.jpeg'
 import desc from './../desc.pdf'
 
 export default function aboutUs() {
@@ -24,7 +25,7 @@ export default function aboutUs() {
             </div>
             <div id="row2desktop" class="sm:hidden lg:flex justify-center w-[100vw] mt-28 space-x-20 mb-28">
                 <GroupCard name={"Leonard Nguyen"} link={"https://www.linkedin.com/in/leonard-nguyen-3a58121a9"} role="Software Engineer" img={leonard}/>
-                <GroupCard name={"5"} link={""} role="Role" img=""/>
+                <GroupCard name={"Tony Choma"} link={"https://www.linkedin.com/in/tony-choma-943825246/"} role="Full Stack Engineer" img={tony}/>
             </div>
 
             <div id="row1mobile" class="sm:flex lg:hidden justify-center space-x-10 w-[100vw]">
@@ -36,7 +37,7 @@ export default function aboutUs() {
                 <GroupCard name={"Leonard Nguyen"} link={"www.linkedin.com/in/leonard-nguyen-3a58121a9"} role="Full Stack Engineer" img={leonard}/>
             </div>
             <div id="row3mobile" class="sm:flex lg:hidden justify-center w-[100vw] mt-28 space-x-20 mb-28">
-                <GroupCard name={"5"} link={""} role="Role" img=""/>
+                <GroupCard name={"Tony Choma"} link={"https://www.linkedin.com/in/tony-choma-943825246/"} role="Full Stack Engineer" img={tony}/>
             </div>
 
             <div class="flex justify-center mb-10">
