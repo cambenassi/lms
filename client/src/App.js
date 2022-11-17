@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   useRoutes,
+
 } from "react-router-dom";
 
 import AboutUs from "./components/aboutUs";
@@ -22,6 +23,7 @@ const App = () => {
 const AppWrapper = () => {
   return (
     <Router>
+      <Navbar />
       <App />
     </Router>
   );
