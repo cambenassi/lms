@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const navbar = () => {
   return (
 
-    <nav className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 '>
+    <nav className='mx-auto px-2 sm:px-6 lg:px-8 bg-blue-300 w-full'>
       <div className='sticky'>
         <div className='flex h-16 items-center justify-center p-10 list-none
           md:space-x-6 md:space-y-0 '>
@@ -26,3 +26,4 @@ const navbar = () => {
   );
 }
 export default navbar;
+

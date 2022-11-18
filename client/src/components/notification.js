@@ -16,21 +16,21 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function notification() {
+export default function notification(props) {
   return (
-    <div className="lg:flex lg:items-center lg:justify-between">
+    <div className="w-[100%] bg-white p-10 border-2 rounded-lg lg:flex lg:items-center lg:justify-between mb-3 drop-shadow-lg">
       <div className="min-w-0 flex-1">
         <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
-          Example Notification 1
+          {props.name}
         </h2>
         <div className="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
           <div title='Class Name' className="hover:cursor-default mt-2 flex items-center text-sm text-gray-500">
             <BookOpenIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-            COMP 4040 - Analysis of Algorithms
+            {props.class}
           </div>
-          <div title='Assignment Type' className="hover:cursor-default mt-2 flex items-center text-sm text-gray-500">
+          <div title='Category' className="hover:cursor-default mt-2 flex items-center text-sm text-gray-500">
             <PencilIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-            Reading
+            {props.type}
           </div>
           {/* <div className="mt-2 flex items-center text-sm text-gray-500">
             <CurrencyDollarIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
@@ -38,12 +38,12 @@ export default function notification() {
           </div> */}
           <div title='Due Date' className="hover:cursor-default mt-2 flex items-center text-sm text-gray-500">
             <CalendarIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-            Due December 1st, 2022
+            {props.due}
           </div>
         </div>
       </div>
       <div className="mt-5 flex lg:mt-0 lg:ml-4 drop-shadow-md">
-        <span className="hidden sm:block">
+        <span className=" sm:block">
           <button
             type="button"
             className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
@@ -53,7 +53,7 @@ export default function notification() {
           </button>
         </span>
 
-        <span className="ml-3 hidden sm:block drop-shadow-md">
+        <span className="ml-3  sm:block drop-shadow-md">
           <button
             type="button"
             className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
@@ -63,7 +63,7 @@ export default function notification() {
           </button>
         </span>
 
-        <span className="sm:ml-3 drop-shadow-md">
+        {/* <span className="sm:ml-3 drop-shadow-md">
           <button
             type="button"
             className="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
@@ -71,10 +71,10 @@ export default function notification() {
             <CheckIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
             Publish
           </button>
-        </span>
+        </span> */}
 
         {/* Dropdown */}
-        <Menu as="div" className="relative ml-3 sm:hidden">
+        {/* <Menu as="div" className="relative ml-3 sm:hidden">
           <Menu.Button className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
             More
             <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 text-gray-500" aria-hidden="true" />
@@ -112,7 +112,7 @@ export default function notification() {
               </Menu.Item>
             </Menu.Items>
           </Transition>
-        </Menu>
+        </Menu> */}
       </div>
     </div>
   )

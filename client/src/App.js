@@ -10,6 +10,7 @@ import {
 import AboutUs from "./components/aboutUs";
 import Home from "./components/home";
 import Prototype from "./components/prototype"
+import Navbar from './components/navBar'
 
 const App = () => {
   let routes = useRoutes([
