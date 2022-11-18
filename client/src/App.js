@@ -9,12 +9,14 @@ import {
 
 import AboutUs from "./components/aboutUs";
 import Home from "./components/home";
-import Navbar from "./components/navBar"
+import Prototype from "./components/prototype"
+import Navbar from './components/navBar'
 
 const App = () => {
   let routes = useRoutes([
-    { path: "/", element: <Home /> },
-    { path: "/about", element: <AboutUs /> }
+    { 	path: "/", element: <Home />},
+	  {	  path: "/about", element: <AboutUs /> },
+    {   path: "/prototype", element: <Prototype />}
   ]);
   return routes;
 };
