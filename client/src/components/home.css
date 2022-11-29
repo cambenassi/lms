@@ -1,0 +1,12 @@
+.homeBodyCard {
+    display: grid;
+    font-size: 0.75rem;
+    /* 12px */
+    line-height: 1rem;
+    /* 16px */
+    width: 100%;
+    color: rgb(101,92,97);
+}
+a{
+    color: #188bbb;
+}

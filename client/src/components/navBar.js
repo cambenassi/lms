@@ -11,7 +11,6 @@ const navbar = () => {
         <div className='grid grid-cols-4'>
           <div className='flex justify-end mr-3' >
             <img src={UmlLogo} className='h-16'></img>
-
           </div>
           <div className='grid grid-rows-1 col-span-3 '>
             <p className='font-serif font-bold text-white text-lg'>
