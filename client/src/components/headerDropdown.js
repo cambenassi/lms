@@ -12,7 +12,7 @@ export default function Example() {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex w-full justify-center rounded-md border border-black bg-[#666666] px-2 py-2 text-sm font-medium text-white shadow-sm hover:bg-[#828282] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+        <Menu.Button className="inline-flex w-full justify-center rounded-md border border-black bg-[#666666] px-2 py-2 text-sm font-medium text-white shadow-sm hover:bg-[#828282] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 ">
           <img src={UserPic} style={{ width: '16px', height: '16px' }}
             className="rounded mx-1 mt-0.5"></img>
           User
