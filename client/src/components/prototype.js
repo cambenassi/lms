@@ -1,11 +1,36 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 
 import Notification from './notification'
 import ClassDropdown from './classDropdown'
 
 import { AdjustmentsHorizontalIcon, Bars4Icon, CalendarDaysIcon, EnvelopeIcon, EnvelopeOpenIcon, ExclamationCircleIcon, FunnelIcon, InboxArrowDownIcon, MagnifyingGlassCircleIcon, MagnifyingGlassIcon, TagIcon } from '@heroicons/react/20/solid'
 
-export default function prototype() {
+export default function Prototype() {
+  useEffect(() => {
+    async function getUniqueNotifications() {
+      const dataSlug = {
+        requestType: "uniqueNotifications",
+        requestData: {
+        }
+      }
+
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dataSlug)
+      }
+
+      const response = await fetch('http://localhost:8080/api', options);
+      const body = await response.json();
+      console.log(body.message);
+    }
+
+    getUniqueNotifications();
+  })
+
+
   return (
     <>
         <div id="sidebarContainer" class="w-full h-[90vh] flex bg-slate-300">

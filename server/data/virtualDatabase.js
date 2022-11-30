@@ -1,60 +1,56 @@
-var obj = {
-    "students": [
+var aStudent = {
+    "name": "Alpha",
+    "id": "01234567",
+    "classes": [
         {
-            "name": "Alpha",
-            "id": "01234567",
-            "classes": [
+            "className": "PSYC 1010 - Introduction to Psychology",
+            "professorName": "Beta",
+            "notifications": [
                 {
-                    "className": "PSYC 1010 - Introduction to Psychology",
-                    "professorName": "Beta",
-                    "notifications": [
-                        {
-                            "header": "Chapter 5 Quiz Graded",
-                            "category": "Quiz",
-                            "dueDate": "N/A",
-                            "markAsRead": "Unread",
-                            "timestamp": "2022-11-01 01:00:00.000"
-                        }
-                    ]
-                },
+                    "header": "Chapter 5 Quiz Graded",
+                    "category": "Quiz",
+                    "dueDate": "N/A",
+                    "markAsRead": "Unread",
+                    "timestamp": "2022-11-01 01:00:00.000"
+                }
+            ]
+        },
+        {
+            "className": "LIFE 2050 - Life Sceience II",
+            "professorName": "Charlie",
+            "notifications": [
                 {
-                    "className": "LIFE 2050 - Life Sceience II",
-                    "professorName": "Charlie",
-                    "notifications": [
-                        {
-                            "header": "Corrections for Eyesight Lab",
-                            "category": "Paper",
-                            "dueDate": "N/A",
-                            "markAsRead": "Unread",
-                            "timestamp": "2022-11-01 01:00:00.000"
-                        }
-                    ]
-                },
+                    "header": "Corrections for Eyesight Lab",
+                    "category": "Paper",
+                    "dueDate": "N/A",
+                    "markAsRead": "Unread",
+                    "timestamp": "2022-11-01 01:00:00.000"
+                }
+            ]
+        },
+        {
+            "className": "COMP 4200 - Software Engineering I",
+            "professorName": "Delta",
+            "notifications": [
                 {
-                    "className": "COMP 4200 - Software Engineering I",
-                    "professorName": "Delta",
-                    "notifications": [
-                        {
-                            "header": "Chapter 2 Discussion Board Post Assigned",
-                            "category": "Discussion",
-                            "dueDate": "2022-11-19",
-                            "markAsRead": "Unread",
-                            "timestamp": "2022-11-01 01:00:00.000"
-                        }
-                    ]
-                },
+                    "header": "Chapter 2 Discussion Board Post Assigned",
+                    "category": "Discussion",
+                    "dueDate": "2022-11-19",
+                    "markAsRead": "Unread",
+                    "timestamp": "2022-11-01 01:00:00.000"
+                }
+            ]
+        },
+        {
+            "className": "COMP 4040 - Analysis of Algorithms",
+            "professorName": "Epsilon",
+            "notifications": [
                 {
-                    "className": "COMP 4040 - Analysis of Algorithms",
-                    "professorName": "Epsilon",
-                    "notifications": [
-                        {
-                            "header": "Chapter 11 Reading Passed Out",
-                            "category": "Reading",
-                            "dueDate": "2022-12-01",
-                            "markAsRead": "Unread",
-                            "timestamp": "2022-11-30 01:00:00.000"
-                        }
-                    ]
+                    "header": "Chapter 11 Reading Passed Out",
+                    "category": "Reading",
+                    "dueDate": "2022-12-01",
+                    "markAsRead": "Unread",
+                    "timestamp": "2022-11-30 01:00:00.000"
                 }
             ]
         }
@@ -84,4 +80,6 @@ async function uniqueNotifications() {
     } catch (e) {
         console.error(e);
     }
+
+    return obj;
 }
