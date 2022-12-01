@@ -6,12 +6,14 @@ import ClassDropdown from './classDropdown'
 import { AdjustmentsHorizontalIcon, Bars4Icon, CalendarDaysIcon, EnvelopeIcon, EnvelopeOpenIcon, ExclamationCircleIcon, FunnelIcon, InboxArrowDownIcon, MagnifyingGlassCircleIcon, MagnifyingGlassIcon, TagIcon } from '@heroicons/react/20/solid'
 
 export default function Prototype() {
+  // I believe this is where we should get the unique notifications and replace static data 
   useEffect(() => {
+    // function to receive unique notifications from the server side
     async function getUniqueNotifications() {
       const dataSlug = {
-        requestType: "uniqueNotifications",
-        requestData: {
-        }
+        requestType: "uniqueNotifications"
+        // requestType is the client's request (right now, it is uniqueNotifications which happens when going to home page to notification page)
+        // i think could later be replaced by other client's requests such as sorts and filters
       }
 
       const options = {
@@ -24,12 +26,15 @@ export default function Prototype() {
 
       const response = await fetch('http://localhost:8080/api', options);
       const body = await response.json();
-      console.log(body.message);
+      var uniqueNotifications = body.message;
+
+      return uniqueNotifications;
     }
 
-    getUniqueNotifications();
+    getUniqueNotifications().then(uniqueNotifications => {
+      console.log(uniqueNotifications);
+    });
   })
-
 
   return (
     <>
