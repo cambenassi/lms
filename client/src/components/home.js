@@ -4,7 +4,6 @@ import './home.css'
 
 export default function home() {
 
-  var testBody = <div>Test</div>
 
   var MsgBody = (
     <div className='homeBodyCard'>
