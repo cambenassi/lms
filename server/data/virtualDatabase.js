@@ -49,7 +49,7 @@ module.exports = {
     getData: async function (dataSlug) {
         const data = await getDataVirtualDatabase(dataSlug);
         return data;
-    }
+    },
 }
 
 async function getDataVirtualDatabase(dataSlug) {
