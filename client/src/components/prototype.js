@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Notification from "./notification";
+import NotificationCard from "./NotificationCard";
 import ClassDropdown from "./classDropdown";
 import CategoryDropDown from "./categoryDropDown";
 
@@ -84,29 +85,9 @@ export default function Prototype() {
         FilteredClasses.push(notif[i]);
       }
     }
+    console.log(FilteredClasses)
     setCurNotifs(FilteredClasses);
   }
-
-  async function getDateArr() {
-    var dateFilter = [];
-    for (var i = 0; i < notif.length; i++) {
-      dateFilter.push(notif[i]);
-    }
-    console.log(dateFilter)
-    return dateFilter;
-
-  }
-
-  //WIP
-
-  // arr.sort(function(a,b){
-  //   if(a.item1 == b.item1){
-  //     return a.item2 > b.item2 ? 1 : a.item2 < b.item2 ? -1 : 0;
-  //   }
-  
-  //   return a.item1 > b.item1 ? 1 : -1;
-  // });
-
   function dateFilter() {
      const sorted = [...notif].sort(function(a,b){
         var _a = a
@@ -120,6 +101,7 @@ export default function Prototype() {
         return (Date.parse(_a.dueDate) > Date.parse(_b.dueDate) ? 1 : Date.parse(_a.dueDate) < Date.parse(_b.dueDate)? -1 : 0)
       })
       const sortedReversed = sorted.reverse()
+      console.log(sortedReversed)
       setCurNotifs(sortedReversed)
   }
 
@@ -132,6 +114,7 @@ export default function Prototype() {
         FilteredClasses.push(notif[i]);
       }
     }
+    console.log(FilteredClasses)
     setCurNotifs(FilteredClasses);
   }
 
@@ -219,13 +202,15 @@ export default function Prototype() {
         </div>
         <div id="notificationsContainer" className="w-[85%] h-[100%] overflow-y-scroll">
           {curNotif?.map((e) => (
-            <Notification
+            <NotificationCard
               key={idGen() + "inner"}
               isNew={e['markAsRead']}
               name={e["header"]}
               _class={e["className"]}
               type={e["category"]}
               due={e["dueDate"]}
+              isRead={e["markAsRead"]}
+              announcementMsg={e["announcement"]}
             />
           ))}
         </div>

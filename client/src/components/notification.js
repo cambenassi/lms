@@ -28,7 +28,8 @@ class notification extends React.Component {
       class: props._class,
       type: props.type,
       due: props.due,
-      isRead: props.isNew
+      isRead: props.isNew,
+      announcementMsg: props.announcement
     }
     
     this.markAsRead = this.markAsRead.bind(this);
@@ -68,6 +69,7 @@ class notification extends React.Component {
               {this.state.due}
             </div>
           </div>
+          <div>{this.state.announcementMsg}</div>
         </div>
         <div className="mt-5 flex lg:mt-0 lg:ml-4 ">
           {

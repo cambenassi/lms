@@ -10,7 +10,8 @@ var aStudent = {
             "category": "Quiz",
             "dueDate": "N/A",
             "markAsRead": "Read",
-            "timestamp": "2022-11-01 01:00:00.000"
+            "timestamp": "2022-11-01 01:00:00.000",
+            "announcement":"Please check out the grade you got and see me if you need to!"
 
         },
         {
@@ -64,7 +65,6 @@ async function getDataVirtualDatabase(dataSlug) {
 }
 async function setDataVirtualDatabase(dataSlug) {
     // if statements to determine request type
-    console.log("GOT HERE");
     if (dataSlug.requestType == "sendNotification") { // this request will return a list of all notifications for the student
         return await newNotification(dataSlug.dataGuy);
     }
