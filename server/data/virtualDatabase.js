@@ -9,7 +9,7 @@ var aStudent = {
             "header": "Chapter 5 Quiz Graded",
             "category": "Quiz",
             "dueDate": "N/A",
-            "markAsRead": "Unread",
+            "markAsRead": "Read",
             "timestamp": "2022-11-01 01:00:00.000"
 
         },
@@ -28,7 +28,7 @@ var aStudent = {
             "header": "Chapter 2 Discussion Board Post Assigned",
             "category": "Discussion",
             "dueDate": "2022-12-01",
-            "markAsRead": "Unread",
+            "markAsRead": "Read",
             "timestamp": "2022-11-01 01:00:00.000"
         },
         {

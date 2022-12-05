@@ -16,6 +16,7 @@ import {
   MagnifyingGlassCircleIcon,
   MagnifyingGlassIcon,
   TagIcon,
+  XCircleIcon,
 } from "@heroicons/react/20/solid";
 
 export default function Prototype() {
@@ -147,16 +148,22 @@ export default function Prototype() {
     var FilteredClasses = [];
     for (var i = 0; i < notif.length; i++) {
       if (notif[i].markAsRead == "Unread") {
+        console.log(notif[i])
         FilteredClasses.push(notif[i]);
       }
     }
+    console.log(FilteredClasses)
     setCurNotifs(FilteredClasses);
+  }
+
+  function clearFilters(){
+    setCurNotifs(notif);
   }
 
   return (
     <>
-      <div id="sidebarContainer" className="w-full h-[90vh] flex bg-slate-300">
-        <div className="w-[15%] bg-slate-200 border-r-2 border-gray-400">
+      <div id="sidebarContainer" className="w-full flex pb-16">
+        <div className="w-[15%]">
           <p className="lg:flex justify-center mt-6 hidden text-2xl text-gray-500 font-semibold">
             Notifications
           </p>
@@ -198,7 +205,7 @@ export default function Prototype() {
           </div>
           <div
             title="Unread"
-            className="hover:cursor-pointer flex ml-[0%] justify-center lg:justify-start lg:ml-[10%] mt-4 items-center text-sm text-gray-500"
+            className="hover:cursor-pointer flex ml-[0%] justify-center lg:justify-start lg:ml-[10%] mt-2 items-center text-sm text-gray-500"
             onClick={unreadFilter}
           >
             <InboxArrowDownIcon
@@ -217,15 +224,26 @@ export default function Prototype() {
             />
             <p className="hidden lg:block text-gray-600">Search</p>
           </div>
+          <div
+            title="Clear"
+            className="hover:cursor-pointer flex ml-[0%] justify-center lg:justify-start lg:ml-[10%] mt-4 items-center text-sm text-gray-500"
+            onClick={clearFilters}
+          >
+            <XCircleIcon
+              className="mr-1.5 h-7 w-7 flex-shrink-0 text-gray-600"
+              aria-hidden="true"
+            />
+            <p className="hidden lg:block text-gray-600">Clear Filters</p>
+          </div>
         </div>
-        <div id="notificationsContainer" className="w-[85%] ">
+        <div id="notificationsContainer" className="w-[80%] mt-6">
           {curNotif?.map((e) => (
             <Notification
               key={idGen() + "inner"}
-              isNew={false}
+              isNew={e['markAsRead']}
               name={e["header"]}
               _class={e["className"]}
-              type="Quiz"
+              type={e["category"]}
               due={e["dueDate"]}
             />
           ))}
