@@ -20,7 +20,7 @@ function CategoryDropDown({ filterFunc }) {
   return (
     <Menu as="div" className="inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex w-full justify-center rounded-md py-2 text-sm font-medium">
+        <Menu.Button className="inline-flex w-full justify-center rounded-md text-sm font-medium">
           <TagIcon title="Filter By Class" className="mr-1.5 h-7 w-7 flex-shrink-0 text-gray-600" aria-hidden="true" />
           <p class="mt-1 hidden lg:block text-gray-600">Filter By Category</p>
           {/* <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" /> */}

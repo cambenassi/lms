@@ -28,8 +28,8 @@ function ProfessorMode() {
   }
 
   return (
-    <div className="w-full h-full flex">
-      <div className="flex w-5/6 justify-center m-10">
+    <div className="w-full justify-center h-full flex">
+      <div className="flex justify-center m-10">
         <NotificationFrom
           btnClick={sendNotifications}
         ></NotificationFrom>
