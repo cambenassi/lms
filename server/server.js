@@ -14,7 +14,10 @@ app.use(cors());
 
 // set up listening on port
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, console.log(`Server started on port ${PORT}`));
+//app.listen(PORT, console.log(`Server started on port ${PORT}`));
+app.listen(process.env.PORT || 8080, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 
 // API CODE
 app.use(express.json({ limit: '1mb' }));
