@@ -3,9 +3,9 @@
     "version": "1.0.0",
     "main": "",
     "scripts": {    
-        "predeploy": "npm run install-client && npm run install-server",
+        "build": "npm run install-client && npm run install-server",
         "deploy": "gh-pages -d build",
-        "start": "npm run install-client && npm run install-server",
+        "start": "cd client && npm run start",
         "install-client": "cd client && npm install && npm run build && cd ..",
         "install-server": "cd server && npm install && cd .. ",
         "heroku-postbuild": "npm run install-client && npm run install-server"
