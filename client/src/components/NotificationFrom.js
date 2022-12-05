@@ -32,13 +32,26 @@ function NotificationFrom({ btnClick }) {
           <label>Due Date:</label>
         </div>
         <div className="grid grid-cols-1 justify-start p-1 m-1">
-          <input ref={classNameRef} type="text" name="className" />
+          /*<input ref={classNameRef} type="text" name="className" />
           <input ref={headerRef} type="text" name="header" />
           <input ref={categoryRef} type="text" name="category" />
+          <input ref={dateRef} type="date" name="dueDate" /> */
+          <select ref={classNameRef} type="text" name="className">
+            <option value="COMPI">Computing I</option>
+            <option value="COMPII">Computing II</option>
+            <option value="COMPIII">Computing III</option>
+            <option value="COMPIV">Computing IV</option>
+          </select>
+          <input ref={headerRef} type="text" name="header" />
+          <select ref={categoryRef} type="text" name="category">
+            <option value="HW">Homework</option>
+            <option value="Quiz">Quiz</option>
+            <option value="Exam">Exam</option>
+          </select>
           <input ref={dateRef} type="date" name="dueDate" />
         </div>
       </form>
-      <button className="border" onClick={sendData}>
+      <button className="border" style="background-color:blue" onClick={sendData}>
         Send Notification
       </button>
     </div>
