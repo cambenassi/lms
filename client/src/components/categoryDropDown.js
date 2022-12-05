@@ -9,7 +9,7 @@ function classNames(...classes) {
   }
 
 function CategoryDropDown({ filterFunc }) {
-  const categories = ["Quiz", "Test", "Paper", "Discussion", "Reading", "Announcement"];
+  const categories = ["Homework", "Quiz", "Exam", "Paper", "Discussion", "Reading", "Announcement",];
   var i = 0;
   function idGen() {
     i = i + 1;

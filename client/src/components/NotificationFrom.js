@@ -1,25 +1,43 @@
 import React, { useEffect, useState, useRef } from "react";
 
-function NotificationFrom({ btnClick }) {
+function NotificationFrom({ btnClick, errMsgState }) {
   const classNameRef = useRef(null);
   const headerRef = useRef(null);
   const categoryRef = useRef(null);
   const dateRef = useRef(null);
 
   function sendData() {
-    var _newN = {
-      className: classNameRef.current.value,
-      professorName: "Beta",
-      header: headerRef.current.value,
-      category: categoryRef.current.value,
-      dueDate: dateRef.current.value,
-      markAsRead: "Unread",
-      timestamp: "2022-11-01 01:00:00.000",
-    };
-    // changeNewN(_newN);
-    btnClick(_newN).then((confMsg) => {
-      console.log(confMsg);
-    });
+    var errMsgs = [];
+    var date = dateRef.current.value;
+    console.log(classNameRef.current.value.length)
+    if (classNameRef.current.value.length < 1) {
+      errMsgs.push("Please enter a valid classname!")
+    }
+    if (headerRef.current.value.length < 1) {
+      errMsgs.push("Please enter a valid title!")
+    }
+    if (dateRef.current.value.length < 1) {
+      errMsgs.push("Please enter a valid due date!")
+    }
+    if(errMsgs.length === 0) {
+      var _newN = {
+        className: classNameRef.current.value,
+        professorName: "Beta",
+        header: headerRef.current.value,
+        category: categoryRef.current.value,
+        dueDate: dateRef.current.value,
+        markAsRead: "Unread",
+        timestamp: "2022-11-01 01:00:00.000",
+      };
+      console.log(_newN)
+      // changeNewN(_newN);
+      btnClick(_newN).then((confMsg) => {
+        console.log(confMsg);
+      });
+      errMsgs.push("Sucess!")
+    }
+    errMsgState(errMsgs)
+    
   }
 
   return (
@@ -39,7 +57,7 @@ function NotificationFrom({ btnClick }) {
                 className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
               />
             </div>
-
+  
             <div className="col-span-6 sm:col-span-3">
               <label htmlFor="header" className="block text-sm font-medium text-gray-700">
                 Header
@@ -52,20 +70,22 @@ function NotificationFrom({ btnClick }) {
                 className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
               />
             </div>
-
+  
             <div className="col-span-6 sm:col-span-4">
               <label htmlFor="category" className="block text-sm font-medium text-gray-700">
                 Category
               </label>
-              <input
-                type="text"
-                name="category"
-                id="category"
-                ref={categoryRef}
-                className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-              />
+              <select ref={categoryRef} type="text" name="category">
+              <option value="Homework">Homework</option>
+              <option value="Quiz">Quiz</option>
+              <option value="Exam">Exam</option>
+              <option value="Paper">Paper</option>
+              <option value="Discussion">Discussion</option>
+              <option value="Reading">Reading</option>
+              <option value="Announcement">Announcement</option>
+            </select>
             </div>
-
+  
             <div className="col-span-6 sm:col-span-3">
               <label htmlFor="country" className="block text-sm font-medium text-gray-700">
                 Due Date
@@ -92,7 +112,9 @@ function NotificationFrom({ btnClick }) {
       </div>
     </div>
   );
-}
+  }
+
+
 
 export default NotificationFrom;
 

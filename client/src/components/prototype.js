@@ -87,51 +87,42 @@ export default function Prototype() {
     setCurNotifs(FilteredClasses);
   }
 
-  //WIP
-  function dateFilter() {
-    const date = new Date();
-    // date.getDate()
-    var date1 = Date.parse("2022-11-16");
-    var date2 = Date.parse("2022-11-17");
-    // console.log(date2)
-    // console.log(Date.parse("0"))
-    if (date1 > date2) {
-      // console.log("2022-11-19 > 2022-11-17");
-      // console.log(date1 + " > " + date2);
-    }
+  async function getDateArr() {
     var dateFilter = [];
     for (var i = 0; i < notif.length; i++) {
       dateFilter.push(notif[i]);
     }
-    // console.log(dateFilter)
+    console.log(dateFilter)
+    return dateFilter;
 
-    for (var i = 0; i < dateFilter.length; i++) {
-      // console.log(dateFilter)
-      for (var j = 0; j < dateFilter.length - 1; j++) {
-        // console.log(dateFilter[j + 1].dueDate + " < " + dateFilter[j].dueDate)
-        // console.log(Date.parse(dateFilter[j + 1].dueDate) + " < " + Date.parse(dateFilter[j].dueDate))
-        var d1 = Date.parse(dateFilter[j + 1].dueDate);
-        var d2 = Date.parse(dateFilter[j].dueDate);
-
-        if (d1 == NaN) {
-          d1 = 946702800000;
-        }
-        if (d2 == NaN) {
-          d2 = 946702800000;
-        }
-        if (d1 < d2) {
-          // console.log("SWAP!")
-          // [dateFilter[j+1], dateFilter[j]] = [dateFilter[j],dateFilter[j+1]]
-          // console.log(dateFilter)
-          var tmp = dateFilter[j + 1];
-          dateFilter[j + 1] = dateFilter[j];
-          dateFilter[j] = tmp;
-          // console.log(dateFilter)
-        }
-      }
-    }
-    // console.log(dateFilter)
   }
+
+  //WIP
+
+  // arr.sort(function(a,b){
+  //   if(a.item1 == b.item1){
+  //     return a.item2 > b.item2 ? 1 : a.item2 < b.item2 ? -1 : 0;
+  //   }
+  
+  //   return a.item1 > b.item1 ? 1 : -1;
+  // });
+
+  function dateFilter() {
+     const sorted = [...notif].sort(function(a,b){
+        var _a = a
+        var _b = b
+        if(_a.dueDate === ""){
+          _a.dueDate = "0"
+        }
+        if(_b.dueDate === ""){
+          _b.dueDate = "0"
+        }
+        return (Date.parse(_a.dueDate) > Date.parse(_b.dueDate) ? 1 : Date.parse(_a.dueDate) < Date.parse(_b.dueDate)? -1 : 0)
+      })
+      const sortedReversed = sorted.reverse()
+      setCurNotifs(sortedReversed)
+  }
+
 
   function categoryFilter(cat) {
     // console.log(cat);
@@ -144,7 +135,7 @@ export default function Prototype() {
     setCurNotifs(FilteredClasses);
   }
 
-  function unreadFilter(){
+  function unreadFilter() {
     var FilteredClasses = [];
     for (var i = 0; i < notif.length; i++) {
       if (notif[i].markAsRead == "Unread") {
@@ -188,16 +179,6 @@ export default function Prototype() {
             </button>
           </div>
           <div
-            title="Priority"
-            className="hover:cursor-pointer flex ml-[0%] justify-center lg:justify-start lg:ml-[10%] mt-4 items-center text-sm text-gray-500"
-          >
-            <ExclamationCircleIcon
-              className="mr-1.5 h-7 w-7 flex-shrink-0 text-gray-600"
-              aria-hidden="true"
-            />
-            <p className="hidden lg:block text-gray-600">Filter by Priority</p>
-          </div>
-          <div
             title="Category"
             className="hover:cursor-pointer flex ml-[0%] justify-center lg:justify-start lg:ml-[10%] mt-4 items-center text-sm text-gray-500"
           >
@@ -236,7 +217,7 @@ export default function Prototype() {
             <p className="hidden lg:block text-gray-600">Clear Filters</p>
           </div>
         </div>
-        <div id="notificationsContainer" className="w-[80%] mt-6">
+        <div id="notificationsContainer" className="w-[85%] h-[100%] overflow-y-scroll">
           {curNotif?.map((e) => (
             <Notification
               key={idGen() + "inner"}
